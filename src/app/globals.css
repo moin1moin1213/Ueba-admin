@@ -1,0 +1,85 @@
+@import 'tailwindcss';
+
+@theme {
+
+  --color-primary: #0D9488;
+  --color-primary-light: #CCFBF1;
+  --color-primary-dark: #0F766E;
+
+  --color-secondary: #14B8A6;
+  --color-secondary-light: #99F6E4;
+
+  --color-background: #F0FDFA;
+
+  --color-white: #FFFFFF;
+
+  --color-text-dark: #134E4A;
+  --color-text-grey: #5E6C6A;
+
+  --color-border: #D1FAE5;
+
+  --color-error: #F04438;
+  --color-success: #12B76A;
+  --color-warning: #F79009;
+
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-primary: #14B8A6;
+  --color-primary-light: #0F3D3A;
+  --color-primary-dark: #5EEAD4;
+
+  --color-secondary: #2DD4BF;
+  --color-secondary-light: #134E4A;
+
+  --color-background: #0B1220;
+
+  --color-white: #161F32;
+
+  --color-text-dark: #E5E7EB;
+  --color-text-grey: #94A3B8;
+
+  --color-border: #263449;
+
+  --color-error: #F87171;
+  --color-success: #34D399;
+  --color-warning: #FBBF24;
+}
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-dark);
+}
+
+/* Three-dot bounce loader */
+.loader {
+  width: 40px;
+  aspect-ratio: 1;
+  --c: linear-gradient(#0D9488 0 0);
+  --m: radial-gradient(farthest-side,#0D9488 92%,#0000);
+  background:
+    var(--c),var(--m),
+    var(--c),var(--m),
+    var(--c),var(--m);
+  background-size: 8px 12px,8px 8px;
+  background-repeat: no-repeat;
+  animation: l13 1s infinite alternate;
+}
+@keyframes l13 {
+  0%,
+  100%  {background-position: 0 0              ,0 100%           ,50% 0              ,50% 100%           ,100% 0              ,100% 100%}
+  20%   {background-position: 0 calc(50% - 6px),0 calc(50% + 4px),50% 0              ,50% 100%           ,100% 0              ,100% 100%}
+  40%   {background-position: 0 calc(50% - 6px),0 calc(50% + 4px),50% calc(50% - 6px),50% calc(50% + 4px),100% 0              ,100% 100%}
+  60%   {background-position: 0 0              ,0 100%           ,50% calc(50% - 6px),50% calc(50% + 4px),100% calc(50% - 6px),100% calc(50% + 4px)}
+  80%   {background-position: 0 0              ,0 100%           ,50% 0              ,50% 100%           ,100% calc(50% - 6px),100% calc(50% + 4px)}
+}
