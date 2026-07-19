@@ -34,7 +34,7 @@ export default function AdminSidebar() {
       <div className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-white border-b border-border">
         <div className="flex justify-between items-center px-4 py-3">
           <span className="font-bold text-lg flex items-center gap-2">
-            <Image src="/assets/icons/logo.png" alt="Ueba" width={28} height={28} className="rounded" />
+            <Image src="/assets/icons/logo.png" alt="Ueba" width={28} height={28} className="rounded" unoptimized />
             Ueba Admin
           </span>
           <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
@@ -74,7 +74,7 @@ export default function AdminSidebar() {
       <div className="hidden lg:flex flex-col sticky top-0 h-screen w-64 flex-shrink-0 bg-white border-r border-border">
         <div className="px-6 py-6 border-b border-border">
           <div className="flex items-center gap-2">
-            <Image src="/assets/icons/logo.png" alt="Ueba" width={32} height={32} className="rounded" />
+            <Image src="/assets/icons/logo.png" alt="Ueba" width={32} height={32} className="rounded" unoptimized />
             <span className="font-bold text-xl text-text-dark">Ueba</span>
           </div>
           <p className="text-xs text-text-grey mt-1">Admin Panel</p>

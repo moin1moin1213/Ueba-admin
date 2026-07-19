@@ -1,0 +1,11 @@
+{
+  "remoteName": "origin",
+  "projects": [
+    {
+      "id": "prj_iPUddVBuZBKDyjCM7Qkid365BtlZ",
+      "name": "ueba-admin",
+      "directory": ".",
+      "orgId": "team_GzzA87q39wJhAZ1HbvsCSRYY"
+    }
+  ]
+}
