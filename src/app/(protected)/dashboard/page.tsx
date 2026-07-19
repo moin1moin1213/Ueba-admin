@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { Loader } from '@/components/Loader'
 
 interface Stats {
   totalPatients: number
@@ -51,7 +52,7 @@ export default function AdminDashboard() {
 
       {loading ? (
         <div className="flex justify-center py-20">
-          <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-primary"></div>
+          <Loader />
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">

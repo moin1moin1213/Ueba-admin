@@ -48,7 +48,7 @@ export default function AdminLoginPage() {
       {isLoading && <FullScreenLoader />}
 
       <div className="w-full max-w-sm bg-white rounded-2xl border border-border p-8">
-        <Image src="/logo.png" alt="Ueba" width={48} height={48} className="rounded mb-4" />
+        <Image src="/assets/icons/logo.png" alt="Ueba" width={48} height={48} className="rounded mb-4" />
         <h1 className="text-2xl font-bold text-text-dark mb-1">Admin Login</h1>
         <p className="text-sm text-text-grey mb-6">Ueba control panel</p>
 

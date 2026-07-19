@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
 import { useConfirm } from '@/components/ConfirmModal'
+import { Loader } from '@/components/Loader'
 
 interface Hospital {
   id: string
@@ -181,7 +182,7 @@ export default function AdminHospitalsPage() {
 
       {loading ? (
         <div className="flex justify-center py-20">
-          <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-primary"></div>
+          <Loader />
         </div>
       ) : filtered.length === 0 ? (
         <p className="text-text-grey">No hospitals found.</p>
@@ -235,16 +236,16 @@ export default function AdminHospitalsPage() {
                         <button
                           onClick={() => handleAction(hospital.id, 'approve')}
                           disabled={actionId === hospital.id}
-                          className="px-4 py-2 bg-green-600 text-white rounded-lg text-sm disabled:opacity-60"
+                          className="px-4 py-2 bg-green-600 text-white rounded-lg text-sm disabled:opacity-60 flex items-center justify-center min-w-[70px]"
                         >
-                          Approve
+                          {actionId === hospital.id ? <Loader size={16} /> : 'Approve'}
                         </button>
                         <button
                           onClick={() => handleAction(hospital.id, 'reject')}
                           disabled={actionId === hospital.id}
-                          className="px-4 py-2 bg-red-600 text-white rounded-lg text-sm disabled:opacity-60"
+                          className="px-4 py-2 bg-red-600 text-white rounded-lg text-sm disabled:opacity-60 flex items-center justify-center min-w-[70px]"
                         >
-                          Reject
+                          {actionId === hospital.id ? <Loader size={16} /> : 'Reject'}
                         </button>
                       </>
                     )}
@@ -253,9 +254,9 @@ export default function AdminHospitalsPage() {
                       <button
                         onClick={() => handleAction(hospital.id, 'ban')}
                         disabled={actionId === hospital.id}
-                        className="px-4 py-2 bg-red-600 text-white rounded-lg text-sm disabled:opacity-60"
+                        className="px-4 py-2 bg-red-600 text-white rounded-lg text-sm disabled:opacity-60 flex items-center justify-center min-w-[70px]"
                       >
-                        Ban
+                        {actionId === hospital.id ? <Loader size={16} /> : 'Ban'}
                       </button>
                     )}
 
@@ -263,9 +264,9 @@ export default function AdminHospitalsPage() {
                       <button
                         onClick={() => handleAction(hospital.id, 'unban')}
                         disabled={actionId === hospital.id}
-                        className="px-4 py-2 bg-green-600 text-white rounded-lg text-sm disabled:opacity-60"
+                        className="px-4 py-2 bg-green-600 text-white rounded-lg text-sm disabled:opacity-60 flex items-center justify-center min-w-[70px]"
                       >
-                        Unban
+                        {actionId === hospital.id ? <Loader size={16} /> : 'Unban'}
                       </button>
                     )}
 
@@ -273,9 +274,9 @@ export default function AdminHospitalsPage() {
                       <button
                         onClick={() => handleAction(hospital.id, 'freeze')}
                         disabled={actionId === hospital.id}
-                        className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm disabled:opacity-60"
+                        className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm disabled:opacity-60 flex items-center justify-center min-w-[70px]"
                       >
-                        Freeze
+                        {actionId === hospital.id ? <Loader size={16} /> : 'Freeze'}
                       </button>
                     )}
 
@@ -283,9 +284,9 @@ export default function AdminHospitalsPage() {
                       <button
                         onClick={() => handleAction(hospital.id, 'unfreeze')}
                         disabled={actionId === hospital.id}
-                        className="px-4 py-2 bg-teal-600 text-white rounded-lg text-sm disabled:opacity-60"
+                        className="px-4 py-2 bg-teal-600 text-white rounded-lg text-sm disabled:opacity-60 flex items-center justify-center min-w-[70px]"
                       >
-                        Unfreeze
+                        {actionId === hospital.id ? <Loader size={16} /> : 'Unfreeze'}
                       </button>
                     )}
                   </div>
@@ -326,9 +327,9 @@ export default function AdminHospitalsPage() {
                     <button
                       onClick={() => handleSaveCommission(hospital.id)}
                       disabled={savingId === hospital.id}
-                      className="px-4 py-2 bg-primary text-white rounded-lg text-sm disabled:opacity-60"
+                      className="px-4 py-2 bg-primary text-white rounded-lg text-sm disabled:opacity-60 flex items-center justify-center min-w-[70px]"
                     >
-                      {savingId === hospital.id ? 'Saving...' : 'Save'}
+                      {savingId === hospital.id ? <Loader size={16} /> : 'Save'}
                     </button>
 
                     <span className="text-xs text-text-grey">{feePreview}</span>

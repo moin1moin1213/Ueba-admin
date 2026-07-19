@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Ueba - Admin',
   description: 'Ueba internal admin panel',
   icons: {
-    icon: '/logo.png',
+    icon: '/assets/icons/logo.png',
   },
   robots: {
     index: false,

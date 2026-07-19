@@ -1,5 +1,5 @@
-export function Loader() {
-  return <div className="loader" />
+export function Loader({ size = 40 }: { size?: number }) {
+  return <div className="loader" style={{ width: size }} />
 }
 
 export function FullScreenLoader() {

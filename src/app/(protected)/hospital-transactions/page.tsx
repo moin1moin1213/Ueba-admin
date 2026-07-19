@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
+import { Loader } from '@/components/Loader'
 
 interface Transaction {
   payment_id: string
@@ -56,7 +57,7 @@ export default function HospitalTransactionsPage() {
 
       {loading ? (
         <div className="flex justify-center py-20">
-          <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-primary"></div>
+          <Loader />
         </div>
       ) : groups.length === 0 ? (
         <p className="text-text-grey">No hospital-linked transactions in the last 30 days.</p>

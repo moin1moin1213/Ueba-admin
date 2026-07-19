@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
 import { useConfirm } from '@/components/ConfirmModal'
+import { Loader } from '@/components/Loader'
 
 interface UserRow {
   id: string
@@ -90,7 +91,7 @@ export default function AdminUsersPage() {
 
       {loading ? (
         <div className="flex justify-center py-20">
-          <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-primary"></div>
+          <Loader />
         </div>
       ) : (
         <div className="bg-white rounded-2xl border border-border overflow-hidden">
@@ -122,9 +123,9 @@ export default function AdminUsersPage() {
                       <button
                         onClick={() => handleDelete(user.id, user.name)}
                         disabled={deletingId === user.id}
-                        className="text-error text-sm disabled:opacity-60"
+                        className="text-error text-sm disabled:opacity-60 inline-flex items-center"
                       >
-                        Delete
+                        {deletingId === user.id ? <Loader size={14} /> : 'Delete'}
                       </button>
                     </td>
                   </tr>

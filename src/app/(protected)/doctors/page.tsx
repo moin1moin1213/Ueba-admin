@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
 import { useConfirm } from '@/components/ConfirmModal'
+import { Loader } from '@/components/Loader'
 
 interface Doctor {
   id: string
@@ -184,7 +185,7 @@ export default function AdminDoctorsPage() {
 
       {loading ? (
         <div className="flex justify-center py-20">
-          <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-primary"></div>
+          <Loader />
         </div>
       ) : filtered.length === 0 ? (
         <p className="text-text-grey">No doctors found.</p>
@@ -246,16 +247,16 @@ export default function AdminDoctorsPage() {
                         <button
                           onClick={() => handleAction(doctor.id, 'approve')}
                           disabled={actionId === doctor.id}
-                          className="px-4 py-2 bg-green-600 text-white rounded-lg text-sm disabled:opacity-60"
+                          className="px-4 py-2 bg-green-600 text-white rounded-lg text-sm disabled:opacity-60 flex items-center justify-center min-w-[70px]"
                         >
-                          Approve
+                          {actionId === doctor.id ? <Loader size={16} /> : 'Approve'}
                         </button>
                         <button
                           onClick={() => handleAction(doctor.id, 'reject')}
                           disabled={actionId === doctor.id}
-                          className="px-4 py-2 bg-red-600 text-white rounded-lg text-sm disabled:opacity-60"
+                          className="px-4 py-2 bg-red-600 text-white rounded-lg text-sm disabled:opacity-60 flex items-center justify-center min-w-[70px]"
                         >
-                          Reject
+                          {actionId === doctor.id ? <Loader size={16} /> : 'Reject'}
                         </button>
                       </>
                     )}
@@ -264,9 +265,9 @@ export default function AdminDoctorsPage() {
                       <button
                         onClick={() => handleAction(doctor.id, 'ban')}
                         disabled={actionId === doctor.id}
-                        className="px-4 py-2 bg-red-600 text-white rounded-lg text-sm disabled:opacity-60"
+                        className="px-4 py-2 bg-red-600 text-white rounded-lg text-sm disabled:opacity-60 flex items-center justify-center min-w-[70px]"
                       >
-                        Ban
+                        {actionId === doctor.id ? <Loader size={16} /> : 'Ban'}
                       </button>
                     )}
 
@@ -274,9 +275,9 @@ export default function AdminDoctorsPage() {
                       <button
                         onClick={() => handleAction(doctor.id, 'unban')}
                         disabled={actionId === doctor.id}
-                        className="px-4 py-2 bg-green-600 text-white rounded-lg text-sm disabled:opacity-60"
+                        className="px-4 py-2 bg-green-600 text-white rounded-lg text-sm disabled:opacity-60 flex items-center justify-center min-w-[70px]"
                       >
-                        Unban
+                        {actionId === doctor.id ? <Loader size={16} /> : 'Unban'}
                       </button>
                     )}
 
@@ -284,9 +285,9 @@ export default function AdminDoctorsPage() {
                       <button
                         onClick={() => handleAction(doctor.id, 'freeze')}
                         disabled={actionId === doctor.id}
-                        className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm disabled:opacity-60"
+                        className="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm disabled:opacity-60 flex items-center justify-center min-w-[70px]"
                       >
-                        Freeze
+                        {actionId === doctor.id ? <Loader size={16} /> : 'Freeze'}
                       </button>
                     )}
 
@@ -294,9 +295,9 @@ export default function AdminDoctorsPage() {
                       <button
                         onClick={() => handleAction(doctor.id, 'unfreeze')}
                         disabled={actionId === doctor.id}
-                        className="px-4 py-2 bg-teal-600 text-white rounded-lg text-sm disabled:opacity-60"
+                        className="px-4 py-2 bg-teal-600 text-white rounded-lg text-sm disabled:opacity-60 flex items-center justify-center min-w-[70px]"
                       >
-                        Unfreeze
+                        {actionId === doctor.id ? <Loader size={16} /> : 'Unfreeze'}
                       </button>
                     )}
                   </div>
@@ -337,9 +338,9 @@ export default function AdminDoctorsPage() {
                     <button
                       onClick={() => handleSaveCommission(doctor.id)}
                       disabled={savingId === doctor.id}
-                      className="px-4 py-2 bg-primary text-white rounded-lg text-sm disabled:opacity-60"
+                      className="px-4 py-2 bg-primary text-white rounded-lg text-sm disabled:opacity-60 flex items-center justify-center min-w-[70px]"
                     >
-                      {savingId === doctor.id ? 'Saving...' : 'Save'}
+                      {savingId === doctor.id ? <Loader size={16} /> : 'Save'}
                     </button>
 
                     <span className="text-xs text-text-grey">{feePreview}</span>

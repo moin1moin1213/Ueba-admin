@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
+import { Loader } from '@/components/Loader'
 
 interface AppointmentRow {
   id: string
@@ -52,7 +53,7 @@ export default function AdminAppointmentsPage() {
 
       {loading ? (
         <div className="flex justify-center py-20">
-          <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-primary"></div>
+          <Loader />
         </div>
       ) : (
         <div className="bg-white rounded-2xl border border-border overflow-hidden">

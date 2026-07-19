@@ -78,4 +78,3 @@ table really has a separate `user_id` column, those pages may not find the
 row. This admin panel uses `id` (matching what registration actually
 writes), but it's worth reconciling which column your schema/pages should
 standardize on.
-"# Ueba-admin" 
